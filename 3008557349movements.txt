@@ -1,0 +1,14 @@
+:::::::::::::::::::::::::
+:::: Mis Movimientos ::::
+:::::::::::::::::::::::::
+
+Recarga realizada
+
+Recarga en: Punto fisico
+Cuanto?: 2000000
+
+Envio realizado
+
+Para: Kamila Andrea
+Cuanto?: 72000
+Numero PyBank: 3107026826

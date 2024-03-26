@@ -1,13 +1,16 @@
 
 import json
 import os
+from colorama import Fore
+import pyfiglet
 
 class PyBank:
     def __init__(self):
         self.acounts = 0
              
     def withdraw(self, number):
-        print('\n:::: Retirar ヅ ::::')
+        font = pyfiglet.figlet_format('\nRetirar')
+        print(Fore.BLUE + font)    
         
         amount = int(input('\n¡Cuánto?: '))
         number = str(input('Cel +57: '))
@@ -37,7 +40,8 @@ class PyBank:
             print('\nError en la estructura de datos del usuario.')
             
     def send(self, number):
-        print('\n:::: Enviar ヅ ::::\n')
+        font = pyfiglet.figlet_format('\nEnviar')
+        print(Fore.BLUE + font)    
         
         number_account_send = str(input('Cel +57: '))
         amount_send = int(input('¿Cuánto?: '))        
@@ -85,7 +89,8 @@ class PyBank:
             self.menu_login(number)
             
     def recharge(self, number):
-        print('\n:::: Recargar PyBank ヅ ::::')
+        font = pyfiglet.figlet_format('\nRecargar   PyBank')
+        print(Fore.BLUE + font)        
         
         amount_recharge = int(input('\n¿Cuánto?: '))
         number = str(input('Cel +57: '))
@@ -106,8 +111,9 @@ class PyBank:
                 file.write(show_values)
     
     def change_password(self, number):
-        print('\n:::: Cambiar contraseña ヅ :::: \n')
-        
+        font = pyfiglet.figlet_format('\nCambiar   password')
+        print(Fore.BLUE + font)
+
         with open(f'{number}.json', 'r') as file:
             my_data = json.load(file)
 
@@ -122,7 +128,8 @@ class PyBank:
             json.dump(my_data, file, indent=2)
                    
     def see_balance(self, number):
-        print('\n:::: Tú saldo ヅ ::::\n')
+        font = pyfiglet.figlet_format('\nTu  saldo')
+        print(Fore.BLUE + font)
         
         with open(f'{number}.json', 'r') as file:
             my_data = json.load(file)
@@ -137,7 +144,9 @@ class PyBank:
             json.dump(my_data, file, indent=2)
     
     def create_account_savings(self, number):
-        print('\n:::: Cuenta de ahorros ヅ ::::\n')
+        font = pyfiglet.figlet_format('\nCuenta   de   ahorros')
+        print(Fore.BLUE + font)
+
         saldo_initial = 0
         
         with open(f'{number}.json', 'r') as file:
@@ -182,7 +191,8 @@ class PyBank:
                 print('No se puedo crear la cuenta de ahorros.')
 
     def recharge_my_account_savings(self, number):
-        print('\n:::: Recargar mi cuenta de ahorros ヅ ::::\n')
+        font = pyfiglet.figlet_format('\nRecargar   cuenta   de   ahorros')
+        print(Fore.BLUE + font)
         
         with open(f'{number}.json', 'r') as file:
             my_data = json.load(file)
@@ -227,7 +237,9 @@ class PyBank:
     # Create account and Log-in
     
     def create_user(self):
-        print('\n:::: Create Account ヅ ::::')
+        font = pyfiglet.figlet_format('\nCreate   Account')
+        print(Fore.BLUE + font)
+            
         print('\nTu número de cuenta para iniciar sesión será tu número de celular.')
         
         name = str(input('\nNombre: '))
@@ -291,7 +303,8 @@ class PyBank:
                 print('\nEse rango no existe.')
     
     def login(self):
-        print('\n:::: Iniciar sesión ヅ ::::')
+        font = pyfiglet.figlet_format('\nLogin')
+        print(Fore.BLUE + font)
 
         num_account = str(input('\n+57: '))
         
@@ -304,6 +317,10 @@ class PyBank:
 
                 if isinstance(data_users, dict):
                     if data_users.get('pass') == to_pass.strip() and data_users.get('numero_cuenta') == num_account.strip():
+                        
+                        font = pyfiglet.figlet_format('\nBienvenido  a  PyBank')
+                        print(Fore.BLUE + font)
+
                         print(f'\n¡Hola, {data_users.get("titular")}!')
                         print('¿Qué deseas realizar hoy?\n')
                         
