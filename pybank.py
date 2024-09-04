@@ -9,7 +9,7 @@ class PyBank:
         self.acounts = 0
              
     def withdraw(self, number):
-        font = pyfiglet.figlet_format('\nRetirar')
+        font = pyfiglet.figlet_format('Retirar')
         print(Fore.BLUE + font)    
         
         amount = int(input('\n¡Cuánto?: '))
@@ -40,7 +40,7 @@ class PyBank:
             print('\nError en la estructura de datos del usuario.')
             
     def send(self, number):
-        font = pyfiglet.figlet_format('\nEnviar')
+        font = pyfiglet.figlet_format('Enviar')
         print(Fore.BLUE + font)    
         
         number_account_send = str(input('Cel +57: '))
@@ -89,7 +89,7 @@ class PyBank:
             self.menu_login(number)
             
     def recharge(self, number):
-        font = pyfiglet.figlet_format('\nRecargar   PyBank')
+        font = pyfiglet.figlet_format('Recargar   PyBank')
         print(Fore.BLUE + font)        
         
         amount_recharge = int(input('\n¿Cuánto?: '))
@@ -111,7 +111,7 @@ class PyBank:
                 file.write(show_values)
     
     def change_password(self, number):
-        font = pyfiglet.figlet_format('\nCambiar   password')
+        font = pyfiglet.figlet_format('Cambiar   password')
         print(Fore.BLUE + font)
 
         with open(f'{number}.json', 'r') as file:
@@ -144,7 +144,7 @@ class PyBank:
             json.dump(my_data, file, indent=2)
     
     def create_account_savings(self, number):
-        font = pyfiglet.figlet_format('\nCuenta   de   ahorros')
+        font = pyfiglet.figlet_format('Cuenta   de   ahorros')
         print(Fore.BLUE + font)
 
         saldo_initial = 0
@@ -191,7 +191,7 @@ class PyBank:
                 print('No se puedo crear la cuenta de ahorros.')
 
     def recharge_my_account_savings(self, number):
-        font = pyfiglet.figlet_format('\nRecargar   cuenta   de   ahorros')
+        font = pyfiglet.figlet_format('Recargar   cuenta   de   ahorros')
         print(Fore.BLUE + font)
         
         with open(f'{number}.json', 'r') as file:
@@ -237,10 +237,9 @@ class PyBank:
     # Create account and Log-in
     
     def create_user(self):
-        font = pyfiglet.figlet_format('\nCreate   Account')
+        font = pyfiglet.figlet_format('Create  Account')
         print(Fore.BLUE + font)
-            
-        print('\nTu número de cuenta para iniciar sesión será tu número de celular.')
+        print('Tu número de cuenta para iniciar sesión será tu número de celular.')
         
         name = str(input('\nNombre: '))
         surname = str(input('Apellido: '))
@@ -303,7 +302,7 @@ class PyBank:
                 print('\nEse rango no existe.')
     
     def login(self):
-        font = pyfiglet.figlet_format('\nLogin')
+        font = pyfiglet.figlet_format('Login')
         print(Fore.BLUE + font)
 
         num_account = str(input('\n+57: '))
